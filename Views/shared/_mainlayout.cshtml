@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    
+    <title>@Page.Title</title>
+    <link href="~/content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/content/style.css" rel="stylesheet" />
+</head>
+<body>
+    <!--Navbar-->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggel collapsed" data-togle="collapse"
+                        data-target="#navbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="#" class="navbar-brand">
+                    <img src="~/images/logo4.png"  class="logo-size" />
+                </a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#">
+                            <i class="glyphicon glyphicon-home"></i>
+                            MAIN PAGE
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <i class="glyphicon glyphicon-glyphicon glyphicon-briefcase"></i>
+                            TYPE OF OFFERS
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <i class="glyphicon glyphicon-glyphicon glyphicon-info-sign"></i>
+                            ABOUT THE WEBSITE
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <i class="glyphicon glyphicon-glyphicon glyphicon-envelope"></i>
+                            CONTACT US
+                        </a>
+                    </li>
+                </ul>
+
+
+                <!--partial login-->
+                @Html.Partial("_Login")
+
+            </div>
+
+        </div>
+    </nav>
+    
+    <div class="container">
+        <div class="row">
+            @RenderBody()
+        </div>
+    </div>
+    
+
+    <!--Footer-->
+<footer class="navbar navbar-fixed-bottom myfootr">
+    <div class="container">
+        <div class="row">
+            <div class="co-md-4">
+                <h3>
+                    ABOUT US
+                </h3>
+                <p>
+                 <!-- later will be adjusted-->
+                </p>
+            </div>
+            <div class="co-md-4">
+                <h3>
+                    IMPORTANT LINKS
+                </h3>
+                <!-- <ul>
+                        <li><a href="#">PUBLIC SECTOR JOB</a></li>
+                        <li><a href="#">PRIVATE SECTOR JOB</a></li>
+                        <li><a href="#">JOBS POSTING ABROAD</a></li>
+                        <li><a href="#">VARIETY OF JOBS</a></li>
+                </ul>-->
+            </div>
+            <div class="co-md-4">
+                <h3>
+                    CONACT US
+                <!-- <ul>
+                        <li><a href="#">FACEBOOK</a></li>
+                        <li><a href="#">INSTAGRAM</a></li>
+                        <li><a href="#">TWITTER</a></li>
+                        <li><a href="#">MESSAGE US</a></li>
+                </ul>-->
+                </h3>
+              
+            </div>
+        </div>
+
+    </div>
+    <div class="subfooter">
+        <span>2021-ALL RIGHTS RESERVED.</span>
+    </div>
+</footer>
+
+    <script src="~/scripts/jquery.js"></script>
+    <script src="~/scripts/bootstrap.min.js"></script>
+
+    @RenderSection("scripts",required:false)
+</body>
+</html>

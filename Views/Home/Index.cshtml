@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Recruitment_System_Management1.Models.Category>
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h2>Welcome!</h2>
+    <p>Find The Job That Fits Your Life .. Find The Person That Fits Your Job</p>
+    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+</div>
+
+
+@foreach (var item in Model)
+{
+<div class="panel panel-default" style="padding:15px;">
+    <h1 class="panel-heading">@Html.DisplayFor(modelItem => item.CategoryName)</h1>
+    <h5>@Html.DisplayFor(modelItem => item.CategoryDescription)</h5>
+
+    <div class="row">
+        @foreach (var subItem in item.Jobs)
+        {
+
+        <div class="col-md-3 thumbnail" style="margin-left:20px; margin-bottom:30px; height:380px;">
+            <img src="~/Uploads/@subItem.JobImage" />
+            <h3>@Html.DisplayFor(modelItem => subItem.JobTitle)</h3>
+            <h5>@Html.DisplayFor(modelItem => subItem.JobContent)</h5>
+            @Html.ActionLink("Details", "Details", new { JobId = subItem.Id },new { @class = "btn btn-primary" } )
+        </div>
+
+        }
+    </div>
+</div>
+        }
